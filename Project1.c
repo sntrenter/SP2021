@@ -2,6 +2,7 @@
 arithmetic expressions */
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 /* Global declarations */
 /* Variables */
 int charClass;
@@ -28,6 +29,12 @@ int lex();
 #define SUB_OP 22
 #define MULT_OP 23
 #define DIV_OP 24
+
+#define COMM 25
+#define SEMI 26
+#define EQ 27
+#define INT 28
+
 #define LEFT_PAREN 25
 #define RIGHT_PAREN 26
 /******************************************************/
@@ -89,6 +96,18 @@ int lookup(char ch)
         addChar();
         nextToken = DIV_OP;
         break;
+    case ',':
+        addChar();
+        nextToken = COMM;
+        break;
+    case ';':
+        addChar();
+        nextToken = SEMI;
+        break;
+    case '=':
+        addChar();
+        nextToken = EQ;
+        break;
     default:
         addChar();
         nextToken = EOF;
@@ -115,6 +134,8 @@ void getChar()
 {
     if ((nextChar = getc(in_fp)) != EOF)
     {
+        //if(nextChar == 'i')
+        //    charClass = WORD;
         if (isalpha(nextChar))
             charClass = LETTER;
         else if (isdigit(nextChar))
@@ -151,7 +172,17 @@ int lex()
             addChar();
             getChar();
         }
-        nextToken = IDENT;
+        //printf("lexeme rn :%s ",lexeme);
+        if(strcmp(lexeme,"int") == 0)//lexeme == "int")
+        {
+            nextToken = INT;
+        }
+        else
+        {
+           nextToken = IDENT;
+        }
+        //^^^bad programming
+        //nextToken = IDENT;
         break;
     /* Parse integer literals */
     case DIGIT:
