@@ -10,11 +10,20 @@
 
 (define (my_union  a b)
   (cond ((null? b) a)
-        ((member (car b) a)
+        ((membership (car b) a)
          (my_union  a (cdr b)))
         (else (my_union  (cons (car b) a) (cdr b)))
     )
 )
+
+(define (membership atm a_list)
+  (cond
+       ((null? a_list) #f)
+       ((eq? atm (car a_list)) #t)
+       (else (membership atm (cdr a_list)))
+ ))
+
+
 
 (my_union  '(1 3 4 5 2 7 ) '(2 5 8 9 0 4 2))
 (my_union  '() '())

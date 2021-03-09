@@ -6,5 +6,5 @@
        (else (membership atm (cdr a_list)))
  ))
 
-(membership 'a '(d c e b))
+(membership 'a '(a d c e b))
 
