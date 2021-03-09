@@ -1,0 +1,45 @@
+#copy and pasted outputs in order 
+
+$ racket 'c:/Users/sntre/Documents/GitHub/SP2021/Rack/Project2_1a.rkt'
+"Start"
+
+12.5664
+33.5104
+#f     
+"end"  
+
+$ racket 'c:/Users/sntre/Documents/GitHub/SP2021/Rack/Project2_1b.rkt'
+"Start"
+
+12.5664
+33.5104
+#f     
+"end"  
+
+$ racket 'c:/Users/sntre/Documents/GitHub/SP2021/Rack/Project2_2.rkt'
+"Start"
+
+'(1 2 3 4 5 6)      
+'(1 3 4 5 6)        
+'(1 (2 3 4) 3 4 5 6)
+'(1 3 4 5 6)        
+'(1)
+'()
+'()
+'()
+"end"
+
+$ racket 'c:/Users/sntre/Documents/GitHub/SP2021/Rack/Project2_3.rkt'
+"Start"
+
+'(0 9 8 1 3 4 5 2 7)
+'()
+'(1 3 4 5 2 7)      
+"end"
+
+$ racket 'c:/Users/sntre/Documents/GitHub/SP2021/Rack/Project2_4.rkt'
+"Start"
+
+'(1 3 4 5)
+'(a c g b)
+"end"    
